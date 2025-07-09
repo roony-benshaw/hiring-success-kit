@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -7,6 +8,10 @@ import { Navigation } from "@/components/Navigation";
 import { MetricCard } from "@/components/MetricCard";
 import { RecentActivity } from "@/components/RecentActivity";
 import { QuickActions } from "@/components/QuickActions";
+import { CandidatesTab } from "@/components/CandidatesTab";
+import { ResumeParsingTab } from "@/components/ResumeParsingTab";
+import { InterviewTab } from "@/components/InterviewTab";
+import { AnalyticsTab } from "@/components/AnalyticsTab";
 
 const Index = () => {
   const [activeModule, setActiveModule] = useState("dashboard");
@@ -185,85 +190,10 @@ const Index = () => {
           </div>
         )}
 
-        {activeModule === "candidates" && (
-          <div className="space-y-8">
-            <div className="flex justify-between items-center">
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900">Candidate Management</h1>
-                <p className="text-gray-600 mt-1">Manage all candidate applications and their journey</p>
-              </div>
-              <Button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700">
-                <Users className="w-4 h-4" />
-                Add New Candidate
-              </Button>
-            </div>
-            <div className="bg-white rounded-lg border p-8 text-center">
-              <Briefcase className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-gray-900 mb-2">Candidate Management Coming Soon</h3>
-              <p className="text-gray-600">This module will include candidate CRUD operations, status tracking, and detailed profiles.</p>
-            </div>
-          </div>
-        )}
-
-        {activeModule === "resume-parsing" && (
-          <div className="space-y-8">
-            <div className="flex justify-between items-center">
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900">Resume Parsing</h1>
-                <p className="text-gray-600 mt-1">AI-powered resume analysis and skill extraction</p>
-              </div>
-              <Button className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700">
-                <FileText className="w-4 h-4" />
-                Upload Resume
-              </Button>
-            </div>
-            <div className="bg-white rounded-lg border p-8 text-center">
-              <FileText className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-gray-900 mb-2">Resume Parsing Coming Soon</h3>
-              <p className="text-gray-600">AI-powered resume parsing with skill matching and candidate profile generation.</p>
-            </div>
-          </div>
-        )}
-
-        {activeModule === "interviews" && (
-          <div className="space-y-8">
-            <div className="flex justify-between items-center">
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900">Interview Management</h1>
-                <p className="text-gray-600 mt-1">Schedule, track, and evaluate candidate interviews</p>
-              </div>
-              <Button className="flex items-center gap-2 bg-green-600 hover:bg-green-700">
-                <Calendar className="w-4 h-4" />
-                Schedule Interview
-              </Button>
-            </div>
-            <div className="bg-white rounded-lg border p-8 text-center">
-              <Calendar className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-gray-900 mb-2">Interview Management Coming Soon</h3>
-              <p className="text-gray-600">Complete interview scheduling, tracking, and evaluation system.</p>
-            </div>
-          </div>
-        )}
-
-        {activeModule === "analysis" && (
-          <div className="space-y-8">
-            <div className="flex justify-between items-center">
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900">Analytics & Reports</h1>
-                <p className="text-gray-600 mt-1">Comprehensive hiring analytics and performance insights</p>
-              </div>
-              <Button className="flex items-center gap-2 bg-orange-600 hover:bg-orange-700">
-                <TrendingUp className="w-4 h-4" />
-                Generate Report
-              </Button>
-            </div>
-            <div className="bg-white rounded-lg border p-8 text-center">
-              <TrendingUp className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-gray-900 mb-2">Analytics Coming Soon</h3>
-              <p className="text-gray-600">Advanced recruitment analytics with time-to-hire, conversion rates, and hiring insights.</p>
-            </div>
-          </div>
-        )}
+        {activeModule === "candidates" && <CandidatesTab />}
+        {activeModule === "resume-parsing" && <ResumeParsingTab />}
+        {activeModule === "interviews" && <InterviewTab />}
+        {activeModule === "analysis" && <AnalyticsTab />}
       </main>
     </div>
   );
