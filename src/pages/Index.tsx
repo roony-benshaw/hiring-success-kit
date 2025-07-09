@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -19,23 +18,23 @@ const Index = () => {
       change: "+12%",
       trend: "up" as const,
       icon: Users,
-      color: "blue"
+      color: "blue" as const
     },
     {
-      title: "Active Interviews",
+      title: "Active Interviews", 
       value: "18",
       change: "+5",
       trend: "up" as const,
       icon: Calendar,
-      color: "green"
+      color: "green" as const
     },
     {
       title: "Resumes Parsed",
-      value: "156",
+      value: "156", 
       change: "+23",
       trend: "up" as const,
       icon: FileText,
-      color: "purple"
+      color: "purple" as const
     },
     {
       title: "Hire Rate",
@@ -43,7 +42,7 @@ const Index = () => {
       change: "+3%",
       trend: "up" as const,
       icon: TrendingUp,
-      color: "orange"
+      color: "orange" as const
     }
   ];
 
